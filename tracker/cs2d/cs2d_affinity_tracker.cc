@@ -48,7 +48,7 @@ bool CS2DAffinityTracker::GetAffinityMatrix(
     float y_max = c_y + pos_range_ * h;
 
     // 3D center in camera space
-    auto t_c = tracked[i].center_;
+    //auto t_c = tracked[i].center_;
 
     for (size_t j = 0; j < selected_entry_matrix_[0].size(); ++j) {
       bool related = true;
@@ -73,11 +73,11 @@ bool CS2DAffinityTracker::GetAffinityMatrix(
       if (c_y_d > y_max || c_y_d < y_min) related = false;
 
       // 3D camera space range limit
-      auto d_c = detected[j].center_;
-      float dist = sqrt(pow(fabs(t_c.x() - d_c.x()), 2.0f)
-                        + pow(fabs(t_c.y() - d_c.y()), 2.0f)
-                        + pow(fabs(t_c.z() - d_c.z()), 2.0f));
-      if (dist > center_range_) related = false;
+      //auto d_c = detected[j].center_;
+      //float dist = sqrt(pow(fabs(t_c.x() - d_c.x()), 2.0f)
+      //                  + pow(fabs(t_c.y() - d_c.y()), 2.0f)
+      //                  + pow(fabs(t_c.z() - d_c.z()), 2.0f));
+      //if (dist > center_range_) related = false;
 
       if (related) (*affinity_matrix)[i][j] = 1.0f;
     }
