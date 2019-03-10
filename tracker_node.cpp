@@ -75,7 +75,7 @@ void chatterCallback(const object_recognition_msgs::RecognizedObjectArray::Const
 
   // Update GUI Window
   cv::imshow("test", img);
-  cv::waitKey(0);
+  cv::waitKey(10);
 
 }
 
